@@ -1,0 +1,204 @@
+ 
+        :root {
+            --calculator-bg: #2d3436;
+            /* Dark background */
+            --display-bg: #4f5b66;
+            /* Slightly lighter dark display */
+            --main-btn-color: #636e72;
+            /* Grey buttons */
+            --operator-btn-color: #0984e3;
+            /* Blue operator buttons */
+            --action-btn-color: #00cec9;
+            /* Cyan clear/back buttons */
+            --equal-btn-color: #26de81;
+            /* Green equals button */
+            --text-color: #ffffff;
+            --display-text-color: #f7f7f7;
+
+            --mid-black: var(--calculator-bg);
+            --chrome-light: var(--text-color);
+            /* White text */
+            --chrome-dark: #38424a;
+            /* Darker border for contrast */
+            --accent-red: #e74c3c;
+            /* Red color for links/accents */
+            --chrome-white: #ffffff;
+            /* Explicit white for text on hover */
+        }
+
+        body {
+            background: linear-gradient(135deg, #1f2833, #38424a);
+            /* Gradient background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            /* Slightly narrower for a cleaner look */
+            margin: 50px auto 20px auto;
+            background-color: var(--calculator-bg);
+            text-align: center;
+            padding: 20px;
+            border: 10px solid #2c3e50;
+            /* Darker border */
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            flex-grow: 1;
+            /* Allow container to grow */
+        }
+
+        h1 {
+            color: var(--text-color);
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        button {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+            margin: 5px 0;
+            font-weight: bold;
+            transition: all 0.1s ease-in-out;
+            color: var(--text-color);
+            border: none !important;
+            box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Display Styling */
+        input#input {
+            text-align: right;
+            font-size: 2.2em !important;
+            height: 70px;
+            margin-bottom: 15px;
+            background-color: var(--display-bg);
+            color: var(--display-text-color);
+            border: 2px solid #5a6268;
+            border-radius: 10px;
+            padding: 0 15px;
+        }
+
+        /* Button color overrides */
+        .btn-secondary {
+            background-color: var(--main-btn-color) !important;
+            border-color: var(--main-btn-color) !important;
+        }
+
+        .btn-primary,
+        .btn-info {
+            background-color: var(--operator-btn-color) !important;
+            border-color: var(--operator-btn-color) !important;
+        }
+
+        .btn-warning,
+        .btn-danger {
+            background-color: var(--action-btn-color) !important;
+            border-color: var(--action-btn-color) !important;
+        }
+
+        .btn-success {
+            background-color: var(--equal-btn-color) !important;
+            border-color: var(--equal-btn-color) !important;
+            /* font-size: 1.5em; */
+        }
+
+        button:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* 🚀 MODAL STYLING FOR LIGHT/TRANSPARENT THEME 🚀 */
+
+        /* 1. Transparent Modal Content Background */
+        .modal-content {
+            /* Use a semi-transparent version of the calculator background */
+            background-color: rgba(45, 52, 54, 0.9);
+            color: var(--text-color);
+            border: 2px solid var(--chrome-dark);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+
+        /* 2. Transparent Modal Backdrop */
+        .modal-backdrop.show {
+            /* Make the dark backdrop more transparent */
+            opacity: 0.25;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid var(--chrome-dark);
+        }
+
+        /* 3. Close Button Reset (Right side is default, remove filter) */
+        .modal-header .btn-close {
+          
+            filter: none;
+        }
+
+        .modal-header h5 {
+            color: var(--text-color);
+            font-weight: bold;
+        }
+
+        .modal-body {
+            color: var(--text-color);
+        }
+
+        .modal-body a {
+            color: var(--operator-btn-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .modal-body a:hover {
+            color: var(--equal-btn-color);
+        }
+
+        .modal-body i {
+            margin-right: 10px;
+        }
+
+        .modal-footer {
+            border-top: 1px solid var(--chrome-dark);
+        }
+
+        .btn-outline-light {
+            border-color: var(--action-btn-color);
+            color: var(--text-color);
+            transition: background-color 0.3s;
+        }
+
+        .btn-outline-light:hover {
+            background-color: var(--action-btn-color);
+            color: var(--chrome-white);
+            border-color: var(--action-btn-color);
+        }
+
+
+        /* Footer Styling */
+        footer {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #1f2833;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            margin-top: auto;
+            /* Pushes footer to the bottom */
+            font-size: 0.9em;
+        }
+
+        .footer-link {
+            color: var(--equal-btn-color);
+            /* Make the footer link stand out */
+            text-decoration: none;
+        }
+
+        /* Ensure the columns handle button sizing nicely */
+        .row.mt-2>[class*="col-"] {
+            padding: 5px;
+        }
+ 
